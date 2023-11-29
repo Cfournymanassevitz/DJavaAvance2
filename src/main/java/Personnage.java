@@ -1,5 +1,6 @@
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
-    public class Personnage {
+public class Personnage {
 
         private int id;
 
@@ -9,9 +10,9 @@
 
 
 
-
+@Entity
         public Personnage(){
-
+@Id
         }
 
 

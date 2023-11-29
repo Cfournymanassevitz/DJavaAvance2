@@ -10,9 +10,9 @@ public class Personnage {
 
 
 
-@Entity
+
         public Personnage(){
-@Id
+
         }
 
 

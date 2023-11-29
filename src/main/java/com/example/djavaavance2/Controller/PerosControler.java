@@ -23,7 +23,7 @@ public class PerosControler {
         System.out.println(name);
         return  name;
     }
-    @GetMapping("/random/bis")
+    @GetMapping("/random/perso")
     public Object getRandomPersonnage(){
         int randomNumber = (int)(Math.random() * (4 - 1)+1);//génération d'un entier >= 1 et < 4
         String url = "http://localhost:8081/Personnage/"+randomNumber;

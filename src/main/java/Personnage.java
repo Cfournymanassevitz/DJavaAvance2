@@ -1,8 +1,13 @@
+import jakarta.persistence.Entity;
+
+import jakarta.persistence.Id;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
+@Entity
 public class Personnage {
 
-        private int id;
+    @Id
+    private int id;
 
         private String name;
         private String type;
@@ -64,5 +69,6 @@ public class Personnage {
                             "\n life=" + life ;
         }
 
-    }
+
+}
 

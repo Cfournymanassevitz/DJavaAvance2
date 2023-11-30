@@ -34,7 +34,7 @@ public class PerosControler {
     private Object getRandomPerso(){
     int random = (int) Math.floor(Math.random()) * (totalOfPersonage.size());
     String uri = "http://localhost:8081/Personnages";
-    List <Personnage> = restTemplate.getForObject(uri , List.class);
+    List <com.example.djavaavance2.Personnage> = restTemplate.getForObject(uri , List.class);
     return ListPersonnage.get(randomId);
     }*/
 }

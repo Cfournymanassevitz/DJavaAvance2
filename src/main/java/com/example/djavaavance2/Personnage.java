@@ -1,3 +1,5 @@
+package com.example.djavaavance2;
+
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;

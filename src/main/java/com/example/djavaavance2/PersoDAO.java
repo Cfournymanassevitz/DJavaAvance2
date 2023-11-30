@@ -7,5 +7,6 @@ import java.util.List;
 @Repository
 public interface PersoDAO  extends JpaRepository<Personnage , Integer> {
   Personnage findById(int id);
+  List<Personnage> findByType(String type);
 }
 

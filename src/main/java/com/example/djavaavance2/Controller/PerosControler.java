@@ -8,8 +8,8 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 
 
 @RestController
@@ -20,13 +20,13 @@ public class PerosControler {
     private PersoDAO persoDao;
 
     //Récupérer la liste des produits
-    @RequestMapping(value = "/Produits", method = RequestMethod.GET)
+    @RequestMapping(value = "/Personnages", method = RequestMethod.GET)
 
-    public MappingJacksonValue listeProduits() {
+    public MappingJacksonValue listePersonnages() {
 
         Iterable<Personnage> personnages = persoDao.findAll();
 
-        SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
+        SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("type");
 
         FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
 
@@ -39,11 +39,18 @@ public class PerosControler {
     }
 
     //Récupérer un produit par son Id
- /* @GetMapping(value = "/Produits/{id}")
-  public Product afficherUnProduit(@PathVariable int id) {
-    return productDao.findById(id);
+  @GetMapping(value = "/Personnages/{id}")
+  public Personnage afficherUnProduit(@PathVariable int id) {
+    return persoDao.findById(id);
 
   }
+  @GetMapping(value = "Personnages/{type}")
+    public List<Personnage> testRequetes(@PathVariable String type)
+  {
+      return persoDao.findByType("Magicien");
+  }
+
+  /*
     private final RestTemplate restTemplate;
 
 
